@@ -25,3 +25,24 @@ This project includes a simple Node.js backend setup using TypeScript and Expres
    ```
 
 The server will start and listen on the port specified in the `backend/src/server.ts` file. You can access the health check endpoint at `http://localhost:<port>/health` to verify that the server is running.
+
+## Setting up the Angular Frontend
+
+This project also includes an Angular frontend that fetches data from the backend and displays it on the homepage. Follow the steps below to set it up:
+
+1. Navigate to the `frontend` directory:
+   ```
+   cd frontend
+   ```
+
+2. Install the necessary dependencies:
+   ```
+   npm install
+   ```
+
+3. To serve the Angular application, run:
+   ```
+   ng serve
+   ```
+
+The Angular application will start and be available at `http://localhost:4200`. It will automatically fetch data from the backend and display it on the homepage.

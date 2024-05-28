@@ -1,0 +1,9 @@
+<div>
+  <h1>Data from Backend</h1>
+  <div *ngIf="data; else noData">
+    <pre>{{ data | json }}</pre>
+  </div>
+  <ng-template #noData>
+    <p>No data available.</p>
+  </ng-template>
+</div>
