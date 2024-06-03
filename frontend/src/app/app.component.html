@@ -1,7 +1,9 @@
-<h1>Backend Data</h1>
-<div *ngIf="backendData; else loading">
-  <p>{{ backendData }}</p>
+<h1>YouTube Videos</h1>
+<div *ngIf="videoUrls.length > 0; else noVideos">
+  <div *ngFor="let videoUrl of videoUrls">
+    <iframe [src]="videoUrl | safeUrl" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+  </div>
 </div>
-<ng-template #loading>
-  <p>Loading...</p>
+<ng-template #noVideos>
+  <p>No videos to display.</p>
 </ng-template>
