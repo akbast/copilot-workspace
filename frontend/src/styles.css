@@ -1,0 +1,13 @@
+/* Global styles for the Angular application */
+body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+}

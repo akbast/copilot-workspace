@@ -1,0 +1,7 @@
+<h1>Backend Data</h1>
+<div *ngIf="backendData; else loading">
+  <p>{{ backendData }}</p>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>
