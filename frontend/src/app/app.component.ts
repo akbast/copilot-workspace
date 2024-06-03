@@ -8,18 +8,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit {
   title = 'frontend';
-  backendData: any;
+  videoUrls: string[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.fetchBackendData();
+    this.fetchVideoUrls();
   }
 
-  fetchBackendData() {
-    this.http.get('/health').subscribe(
+  fetchVideoUrls() {
+    this.http.get<string[]>('/videos').subscribe(
       data => {
-        this.backendData = data;
+        this.videoUrls = data;
       },
       error => {
         console.error('There was an error!', error);
