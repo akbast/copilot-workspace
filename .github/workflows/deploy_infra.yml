@@ -1,0 +1,22 @@
+name: Deploy Infrastructure
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy_infra:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Bicep files
+        run: |
+          az deployment group create --resource-group ${{ secrets.AZURE_RESOURCE_GROUP }} --template-file ./infra/main.bicep --parameters appServiceName=${{ secrets.APP_SERVICE_NAME }} storageAccountName=${{ secrets.STORAGE_ACCOUNT_NAME }}
